@@ -1,1 +1,4 @@
+Cython==0.29.24
+scipy==1.7.2
+pyTelegramBotAPI==4.2.0
 easyocr==1.4.1
