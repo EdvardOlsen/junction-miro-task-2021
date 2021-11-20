@@ -1,1 +1,1 @@
-pip install easyocr
+easyocr==1.4.1
