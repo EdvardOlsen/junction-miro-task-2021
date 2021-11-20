@@ -1,13 +1,19 @@
-# junction-miro-task-2021
-https://colab.research.google.com/drive/10OVT3S21VEvRIyvYWWg_dQpYp-Oolfq_?usp=sharing
-This is the github repository for a Junction 2021 project. \
-This task is for the company Miro \
-### The problem we are solving
-We are solving the problem of tranferring words from a physical source into the Miro whiteboard using optical character recognition (OCR) \
-### Technical part
-We use the miro platform in our solution
-The user sends a photo to a Telegram Bot made with Telegram API. The photo is then sent to a cloud service made with Google Cloud API where a Pytorch OCR framework processes the photo and pulls text out of it. Then the text is written into the miro whiteboard. The Rest API of miro, as of time of writing, doesn't let us create an app that can send photos, however we can write text with it, for this reason the request must be sent using Telegram API and the return text written into the miro whiteboard will be done using Rest API. \
-### Impact on the user
-Users using this app will spend much less time and be more happy. Writing out word for word is very tedious and takes a long time which leads to unhappiness, by using our faster method, you can do tasks of transferring from paper into the internet much faster and not be unhappy!
+# Junction-2021 Miro case solution 
+This project recognizes text from printed/handwritten text photos, converts to plane text and automatically send to Miro whiteboard. Unfortunately, GET picture URL is still not available from Miro REST API, but we found telegram-based solution :)
+![demo](pictures/demo.png)
+## How to test
+1. Make sure you have a [Telegram account](https://web.telegram.org/k/)
+2. Send photo you want to exctract text from to [OCR-bot](http://t.me/miroocrbot). By default your recognized text will appear at common whiteboard. But if you have your own, you can specify it just sent your whiteboard id to that bot
+3. Bot will return you recognized text and a link to inserted to Miro whiteboard text-widget
+
+also you separately can check easyocr model: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10OVT3S21VEvRIyvYWWg_dQpYp-Oolfq_?usp=sharing)
+## More about pipeline
+1. User sends photo to Telegram bot via telegram bot api
+2. Telegram bot lives on Google Cloud Platform instance near to easyocr image-to-text recognition model. After telegram bot receives photo, it getting proceed by image-to-text model and returns text. Processing code can be found [here](https://github.com/EdvardOlsen/junction-miro-task-2021/blob/main/Backend/run.py)
+3. Text both sending to user with telegram bot api and to Miro whiteboard with Miro REST API
+![pipeline](pictures/schema.png)
+## Demos and videos
+1. [First-day draft](https://www.youtube.com/watch?v=zHnxY2oB-Sw)
+2. [Telegram bot-demo](http://t.me/miroocrbot)
 
 
