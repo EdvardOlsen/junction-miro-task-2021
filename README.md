@@ -13,7 +13,8 @@ also you separately can check easyocr model: [![Open In Colab](https://colab.res
 3. Text both sending to user with telegram bot api and to Miro whiteboard with Miro REST API
 ![pipeline](pictures/schema.png)
 ## Demos and videos
-1. [First-day draft](https://www.youtube.com/watch?v=zHnxY2oB-Sw)
-2. [Telegram bot-demo](http://t.me/miroocrbot)
+1. [Final demo](https://www.youtube.com/watch?v=ZZbYFl25K94)
+2. [First-day draft](https://www.youtube.com/watch?v=zHnxY2oB-Sw)
+3. [Telegram bot-demo](http://t.me/miroocrbot)
 
 
